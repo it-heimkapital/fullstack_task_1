@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  server:
+    build: ./server
+    command: uvicorn app.api:app --host '0.0.0.0' --port 8005
+    ports:
+      - "8005:8005"
+    env_file:
+      - server/.env
+    depends_on:
+      - postgres
+    restart: always
+  postgres:
+    image: postgres:13.4-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    expose:
+      - 5432
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOSTNAME=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=heimkapital
+volumes:
+  postgres_data:
