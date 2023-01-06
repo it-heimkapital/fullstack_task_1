@@ -1,5 +1,5 @@
 from . import schemas, models
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from fastapi import Depends, status, APIRouter
 from .database import get_db
 
@@ -13,7 +13,7 @@ def get_employees(db: Session = Depends(get_db), limit: int = 10, page: int = 1)
     """
     skip = (page - 1) * limit
 
-    employees = db.query(models.Employee).limit(limit).offset(skip).all()
+    employees = db.query(models.Employee).options(joinedload(models.Employee.department)).limit(limit).offset(skip).all()
 
     return {"status": "success", "results": len(employees), "employees": employees}
 
@@ -61,8 +61,8 @@ def create_department(payload: schemas.Department, db: Session = Depends(get_db)
         return {"status": "success", "department": department}
 
 
-@router.get("/get_department")
-def get_department(db: Session = Depends(get_db), limit: int = 10, page: int = 1):
+@router.get("/get_departments")
+def get_departments(db: Session = Depends(get_db), limit: int = 10, page: int = 1):
     """
     Get list of Departments
     """

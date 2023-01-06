@@ -30,7 +30,7 @@ app.dependency_overrides[get_db] = override_get_db
 @pytest.fixture(scope="module")
 def test_app():
     """
-    Create test app client
+    Create test app client8
     Note: Database will be deleted after testing
     """
     client = TestClient(app)

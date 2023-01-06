@@ -3,8 +3,7 @@ from pydantic import BaseSettings
 
 class Settings(BaseSettings):
     """
-    Values are set from .env.sample.sample file
-    Rename .env.sample.sample.sample to .env.sample.sample in your local before changing the value.
+    Values are set from .env file
     """
     POSTGRES_PORT: int
     POSTGRES_PASSWORD: str

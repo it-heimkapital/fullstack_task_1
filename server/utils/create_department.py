@@ -5,7 +5,7 @@ from app import models
 from app import schemas
 from app.database import get_db
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
 
 db = next(get_db())
 
@@ -15,12 +15,12 @@ def create_initial_department(department_list: list) -> None:
         payload = schemas.Department(name=department)
         result = db.query(models.Department).filter(models.Department.name == department).all()
         if result:
-            print(f"Department already exists with name: {department}")
+            logging.info(f"Department already exists with name: {department}")
             continue
         department = models.Department(**payload.dict())
         db.add(department)
         db.commit()
-        logger.info(f"Inserted Department with name: {department}")
+        logging.info(f"Inserted Department with name: {department}")
 
 
 if __name__ == '__main__':

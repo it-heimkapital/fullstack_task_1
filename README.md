@@ -3,7 +3,7 @@
 # Heimkapital backend
 
 ## Run on local:
-  Change .env.sample to .env before doing the setup:
+ Changle postgres hostname to `localhost` for running on local.
 
    1. Install the requirement using `poetry install` .
    2. Create initial department `python3 -m utils.create_department` from `server` directory.
@@ -20,3 +20,18 @@ Backend application will be available on `localhost:8005`.
 Note: Check if port `8005` is free on your machine. Make it free if it's in use.
 
 # Heimkapital Front-end
+## Run on Local
+In the client directory, you can run:
+
+### `npm install`
+### `npm start`
+
+## Run on Docker:
+    docker-compose up --build
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
+

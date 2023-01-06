@@ -9,7 +9,7 @@ models.Base.metadata.create_all(bind=engine)  # Create all tables stored in the 
 app = FastAPI()
 
 origins = [
-    "http://localhost:8005",  # needed to call by front-end
+    "*",  # needed to call by front-end
 ]
 
 app.add_middleware(

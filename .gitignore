@@ -20,7 +20,7 @@ __pycache__/
 ../.idea/
 
 # Environments
-server/.env.sample
+server/.env
 .venv
 env/
 venv*/
@@ -63,3 +63,5 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+
+client/node_modules

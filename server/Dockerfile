@@ -30,5 +30,4 @@ COPY . /usr/server/app/
 
 EXPOSE 8005
 
-# run entrypoint.sh
 CMD ["/bin/bash", "/usr/server/app/entrypoint.sh"]
