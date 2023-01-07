@@ -61,7 +61,6 @@ def add_employee():
         # Use db session to add employee data to db
         db.session.add(new_employee)
         db.session.commit()
-        db.session.close()
         logging.info("New employee is added successfully")
         return jsonify({"Message": "New employee is added successfully"}), 200
 
