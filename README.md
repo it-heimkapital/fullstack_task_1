@@ -61,10 +61,12 @@ npm start
 - Once both frontend and backend are up and running then the user can go to
   [http://localhost:3000](http://localhost:3000) to see a list of existing employees
   as shown below
+  
   ![alt text](/frontend-ui/public/sample_1.png)
 
 - User can add new employee to the existing list by clicking on 'Add New Employee' button
   which opens a form where the user can provide employee data such as first name, last name and the department
+  
   ![alt text](/frontend-ui/public/sample2.png)
 
 - After submitting the form the employee list will be updated automatically with newly added employee details
