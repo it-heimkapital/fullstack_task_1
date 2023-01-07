@@ -3,8 +3,8 @@ from api import db
 
 class Department(db.Model):
     """
-    db model class for Department
-    department class has relationship with employee using backref
+    database model class for Department
+    Department class has relationship with Employee using backref
     """
 
     __tablename__ = "department"
@@ -15,7 +15,9 @@ class Department(db.Model):
 
 class Employee(db.Model):
     """
-    db model class for employee
+    database model class for employee
+    Employee class has relationship to Department class
+    using ForeignKey department_id
     """
 
     __tablename__ = "employee"
