@@ -5,11 +5,8 @@ import { EmployeeComponent } from "./components/EmployeeComponent";
 
 const { Header, Content } = Layout;
 
-{
-  /* This app renders the EmployeeComponent to list and add employees 
-     basic styling and css are used for better view
-  */
-}
+// This app renders the EmployeeComponent to list and add employees
+// basic styling and css are used for better view
 
 function App() {
   return (
