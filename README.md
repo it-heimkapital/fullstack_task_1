@@ -19,6 +19,12 @@
   python -m venv venv #create a virtual environment
   source venv/bin/activate #activate your virtual environment
   pip install -r .requirements.txt
+  create .env file in the root with the following data
+  POSTGRES_USER=postgres
+  POSTGRES_PASSWORD=yourpassword
+  POSTGRES_SERVER=localhost
+  POSTGRES_PORT=5432
+  POSTGRES_DB=heimkapital
   uvicorn main:app --reload #start server
   visit  127.0.0.1:8000
  ```
