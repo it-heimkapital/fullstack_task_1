@@ -13,3 +13,8 @@ services:
             - type: bind
               source: ./data/postgres-init
               target: /docker-entrypoint-initdb.d
+    backend:
+        image: sherjeelsikander/heimkapital:backend-v1
+        container_name: heimkapital_backend
+        ports:
+            - "8080:8080"
