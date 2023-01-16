@@ -18,3 +18,8 @@ services:
         container_name: heimkapital_backend
         ports:
             - "8080:8080"
+    frontend:
+        image: sherjeelsikander/heimkapital:frontend-v1
+        container_name: heimkapital_frontend
+        ports:
+            - "80:80"
