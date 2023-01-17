@@ -1,0 +1,11 @@
+#docker build -f Dockerfile-frontend -t sherjeelsikander/heimkapital:frontend-v1 .
+
+FROM node:18-alpine
+
+RUN npm install -g http-server
+
+COPY frontend /app/frontend/
+
+WORKDIR /app/frontend/
+
+ENTRYPOINT ["http-server","-p","80"]
