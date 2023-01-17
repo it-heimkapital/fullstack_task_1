@@ -10,6 +10,7 @@ services:
         ports:
             - "5432:5432"
         volumes:
+            - db_data:/var/lib/postgresql/data/
             - type: bind
               source: ./data/postgres-init
               target: /docker-entrypoint-initdb.d
@@ -18,8 +19,12 @@ services:
         container_name: heimkapital_backend
         ports:
             - "8080:8080"
+        depends_on:
+            - db
     frontend:
         image: sherjeelsikander/heimkapital:frontend-v1
         container_name: heimkapital_frontend
         ports:
             - "80:80"
+volumes:
+  db_data:
